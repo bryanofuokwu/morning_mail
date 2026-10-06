@@ -93,7 +93,7 @@ if [[ "${PROVISION_AOAI}" == "1" ]]; then
   fi
   if [[ -z "${AZURE_OPENAI_API_KEY:-}" ]]; then
     AZURE_OPENAI_API_KEY="$(az cognitiveservices account keys list -g "${RG}" -n "${AOAI_NAME}" --query key1 -o tsv)"
-    echo "   derived api key (first 8 chars): ${AZURE_OPENAI_API_KEY:0:8}…"
+    echo "   derived Azure OpenAI API key (masked)"
   fi
 fi
 
